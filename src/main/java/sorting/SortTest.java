@@ -16,12 +16,28 @@ public class SortTest {
         }
     }
 
+    static void insertSort(int[] a) {
+        for(int i = 1; i < a.length; i++) {
+            int temp = a[i];
+            int j;
+            for(j = i - 1; j > 0; j--) {
+                if(a[j] > temp) {
+                    a[j+1] = a[j];
+                } else {
+                    break;
+                }
+            }
+            a[j] = temp;
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Hello");
         int[] a = new int[]{9, 8, 7, 6, 5, 4, 3, 2, 1};
 
         System.out.println(Arrays.toString(a));
-        choiseSort(a);
+        //choiseSort(a);
+        insertSort(a);
         System.out.println(Arrays.toString(a));
     }
 }
